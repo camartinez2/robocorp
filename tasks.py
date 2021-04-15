@@ -1,11 +1,5 @@
 from RPA.Browser.Selenium import Selenium
-from Selenium import webdriver
-from Selenium.webdriver.common.by import By
-
-driver = webdriver.Firefox()
-
-driver.get("http://www.google.com")
-
+import webbrowser
 
 browser = Selenium()
 url = "http://ebill.facturaenlinea.co/Login.aspx"
@@ -27,7 +21,7 @@ def log_in(user: str, password: str):
     browser.press_keys(input_field, "ENTER")
     input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10"
     input_field.click()
-
+    webbrowser.open(url_bill)
 
 
 
