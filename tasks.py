@@ -30,7 +30,6 @@ def main():
     finally:
        #browser.close_all_browsers()
 
-
 # Call the main() function, checking that we are running as a stand-alone script:
 if __name__ == "__main__":
     main()
