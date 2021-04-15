@@ -20,7 +20,7 @@ def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder1_Login2_Password"
     browser.input_text(input_field, password)
     browser.press_keys(input_field, "ENTER")
-    login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10')
+    login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
     actions = ActionChains(driver)
     actions.click(login_form)
     actions.perform()
