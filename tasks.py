@@ -24,6 +24,7 @@ def log_in(user: str, password: str):
     actions = ActionChains(driver)
     actions.click(link_bill)
     actions.perform()
+    time.sleep(3)
     seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
     seller.send_keys('Cristian Adrián Martínez')
     actions.click(seller)
