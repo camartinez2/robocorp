@@ -24,11 +24,13 @@ def log_in(user: str, password: str):
     actions = ActionChains(driver)
     actions.click(link_bill)
     actions.perform()
+    driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I").click()
+
 
 def store_screenshot(filename: str):
-    time.sleep(30)
+    time.sleep(10)
     driver.save_screenshot(filename)
-    time.sleep(30)
+    time.sleep(10)
 
 # Define a main() function that calls the other functions in order:
 def main():
