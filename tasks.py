@@ -1,7 +1,7 @@
 from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 
-driver = webdriver.Chrome() 
+driver = webdriver.Chrome('/Users/camtech/Desktop') 
 
 browser = Selenium()
 url = "http://ebill.facturaenlinea.co/Login.aspx"
