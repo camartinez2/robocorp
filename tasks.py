@@ -1,9 +1,7 @@
 from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 
-browser = Selenium()
 url = "http://ebill.facturaenlinea.co/Login.aspx"
-url_bill = "http://ebill.facturaenlinea.co/Contenido/Facturas/Edicion.aspx"
 user = "camtechadmin"
 password = "wzo@1rjtln$o192r"
 screenshot_filename = "output/screenshot.png"
@@ -15,11 +13,9 @@ def open_the_website(url: str):
 def log_in(user: str, password: str):
     element = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_UserName')
     element.send_keys(user)
-    #input_field = "id:ctl00_ContentPlaceHolder1_Login2_UserName"
-    #browser.input_text(input_field, user)
-    #input_field = "id:ctl00_ContentPlaceHolder1_Login2_Password"
-    #browser.input_text(input_field, password)
-    #browser.press_keys(input_field, "ENTER")
+    element = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_Password')
+    element.send_keys(password)
+    driver.find_element_by_id("ctl00_ContentPlaceHolder1_Login2_LoginButton").click()
     #login_form = driver.find_element_by_link_text('../../imagenes/MenuLateral/menu_cargarFactura.png')
     #actions = ActionChains(driver)
     #actions.click(login_form)
@@ -36,7 +32,7 @@ def main():
         log_in(user, password)
         store_screenshot(screenshot_filename)
     finally:
-        driver.close_all_browsers()
+        driver.close()
 
 # Call the main() function, checking that we are running as a stand-alone script:
 if __name__ == "__main__":
