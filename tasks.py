@@ -10,7 +10,6 @@ user = "camtechadmin"
 password = "wzo@1rjtln$o192r"
 screenshot_filename = "output/screenshot.png"
 
-
 def open_the_website(url: str):
     browser.open_available_browser(url)
 
@@ -21,11 +20,7 @@ def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder1_Login2_Password"
     browser.input_text(input_field, password)
     browser.press_keys(input_field, "ENTER")
-    #input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10"
-    #input_field.click()
-    #browser.open(url_bill)
-    click_button_when_visible()
-
+    driver.findElement(By.cssSelector("a[id=\"ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura\"]")).click();					
 
 def store_screenshot(filename: str):
     browser.screenshot(filename=filename)
