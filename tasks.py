@@ -1,8 +1,6 @@
 from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 
-driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver') 
-
 browser = Selenium()
 url = "http://ebill.facturaenlinea.co/Login.aspx"
 url_bill = "http://ebill.facturaenlinea.co/Contenido/Facturas/Edicion.aspx"
@@ -20,12 +18,11 @@ def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder1_Login2_Password"
     browser.input_text(input_field, password)
     browser.press_keys(input_field, "ENTER")
+    driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver')
     login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
     actions = ActionChains(driver)
     actions.click(login_form)
     actions.perform()
-
-
 
 def store_screenshot(filename: str):
     browser.screenshot(filename=filename)
