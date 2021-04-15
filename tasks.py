@@ -26,6 +26,7 @@ def log_in(user: str, password: str):
     actions.perform()
 
 def store_screenshot(filename: str):
+    time.sleep(3)
     driver.save_screenshot(screenshot_filename)
 
 
