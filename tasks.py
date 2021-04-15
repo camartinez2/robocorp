@@ -20,7 +20,6 @@ def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura"
     browser.press_keys(input_field, "ENTER")
 
-
 def store_screenshot(filename: str):
     browser.screenshot(filename=filename)
 
@@ -31,9 +30,8 @@ def main():
         open_the_website(url)
         log_in(user, password)
         store_screenshot(screenshot_filename)
-#    finally:
-#        browser.close_all_browsers()
-
+    finally:
+        browser.close_all_browsers()
 
 # Call the main() function, checking that we are running as a stand-alone script:
 if __name__ == "__main__":
