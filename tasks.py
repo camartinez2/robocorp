@@ -1,6 +1,6 @@
 from RPA.Browser.Selenium import Selenium
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+from Selenium import webdriver
+from Selenium.webdriver.common.by import By
 
 driver = webdriver.Firefox()
 
