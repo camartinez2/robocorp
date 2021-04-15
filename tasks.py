@@ -12,16 +12,16 @@ def open_the_website(url: str):
     driver.get(url)
 
 def log_in(user: str, password: str):
-    element = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_UserName')
-    element.send_keys(user)
-    element = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_Password')
-    element.send_keys(password)
-    driver.find_element_by_id("ctl00_ContentPlaceHolder1_Login2_LoginButton").click()
-    #login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10')
-    #login_form = driver.find_element_by_xpath("//a[@id='ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10']")
-    #actions = ActionChains(driver)
-    #actions.click(login_form)
-    #actions.perform()
+    form_name = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_UserName')
+    form_name.send_keys(user)
+    form_passwd = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_Password')
+    form_passwd.send_keys(password)
+    form_login = driver.find_element_by_id("ctl00_ContentPlaceHolder1_Login2_LoginButton")
+    form_login.click()
+    link_bill = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
+    actions = ActionChains(driver)
+    actions.click(login_form)
+    actions.perform()
 
 def store_screenshot(filename: str):
     driver.save_screenshot(screenshot_filename)
