@@ -1,6 +1,7 @@
 from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 url = "http://ebill.facturaenlinea.co/Login.aspx"
 user = "camtechadmin"
@@ -18,6 +19,7 @@ def log_in(user: str, password: str):
     form_passwd.send_keys(password)
     form_login = driver.find_element_by_id("ctl00_ContentPlaceHolder1_Login2_LoginButton")
     form_login.click()
+    time.sleep(5)
     link_bill = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
     actions = ActionChains(driver)
     actions.click(login_form)
