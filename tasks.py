@@ -1,4 +1,11 @@
 from RPA.Browser.Selenium import Selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+
+driver.get("http://www.google.com")
+
 
 browser = Selenium()
 url = "http://ebill.facturaenlinea.co/Login.aspx"
