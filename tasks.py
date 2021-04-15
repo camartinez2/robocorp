@@ -1,6 +1,8 @@
 from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 
+driver = webdriver.Chrome() 
+
 browser = Selenium()
 url = "http://ebill.facturaenlinea.co/Login.aspx"
 url_bill = "http://ebill.facturaenlinea.co/Contenido/Facturas/Edicion.aspx"
@@ -22,7 +24,7 @@ def log_in(user: str, password: str):
     #input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10"
     #input_field.click()
     #browser.open(url_bill)
-
+    click_button_when_visible()
 
 
 def store_screenshot(filename: str):
