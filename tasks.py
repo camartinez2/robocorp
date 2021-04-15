@@ -32,9 +32,10 @@ def main():
     try:
         open_the_website(url)
         log_in(user, password)
-        store_screenshot(screenshot_filename)
+        #store_screenshot(screenshot_filename)
     finally:
-        driver.close()
+        store_screenshot(screenshot_filename)
+        #driver.close()
 
 # Call the main() function, checking that we are running as a stand-alone script:
 if __name__ == "__main__":
