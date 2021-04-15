@@ -19,7 +19,7 @@ def log_in(user: str, password: str):
     browser.input_text(input_field, password)
     browser.press_keys(input_field, "ENTER")
     driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver')
-    login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
+    login_form = driver.find_element_by_link_text('../../imagenes/MenuLateral/menu_cargarFactura.png')
     actions = ActionChains(driver)
     actions.click(login_form)
     actions.perform()
