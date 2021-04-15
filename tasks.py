@@ -17,7 +17,7 @@ def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder1_Login2_Password"
     browser.input_text(input_field, password)
     browser.press_keys(input_field, "ENTER")
-    input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura"
+    input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10"
     browser.press_keys(input_field, "ENTER")
 
 def store_screenshot(filename: str):
