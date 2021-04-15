@@ -18,10 +18,10 @@ def log_in(user: str, password: str):
     element.send_keys(password)
     driver.find_element_by_id("ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura").click()
     #login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10')
-    login_form = driver.find_element_by_xpath("//a[@id='ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10']")
-    actions = ActionChains(driver)
-    actions.click(login_form)
-    actions.perform()
+    #login_form = driver.find_element_by_xpath("//a[@id='ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10']")
+    #actions = ActionChains(driver)
+    #actions.click(login_form)
+    #actions.perform()
 
 def store_screenshot(filename: str):
     driver.save_screenshot(screenshot_filename)
