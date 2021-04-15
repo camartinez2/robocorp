@@ -19,6 +19,8 @@ def log_in(user: str, password: str):
     browser.press_keys(input_field, "ENTER")
     input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10"
     browser.press_keys(input_field, "ENTER")
+    img_bill = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10')
+    img_bill.click()
 
 def store_screenshot(filename: str):
     browser.screenshot(filename=filename)
