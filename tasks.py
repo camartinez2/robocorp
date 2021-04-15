@@ -31,8 +31,8 @@ def main():
         open_the_website(url)
         log_in(user, password)
         store_screenshot(screenshot_filename)
-    finally:
-        browser.close_all_browsers()
+#    finally:
+#        browser.close_all_browsers()
 
 
 # Call the main() function, checking that we are running as a stand-alone script:
