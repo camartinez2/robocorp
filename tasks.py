@@ -16,13 +16,13 @@ def log_in(user: str, password: str):
     element = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_Password')
     element.send_keys(password)
     driver.find_element_by_id("ctl00_ContentPlaceHolder1_Login2_LoginButton").click()
-    #login_form = driver.find_element_by_link_text('../../imagenes/MenuLateral/menu_cargarFactura.png')
-    #actions = ActionChains(driver)
-    #actions.click(login_form)
-    #actions.perform()
+    login_form = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_Image10')
+    actions = ActionChains(driver)
+    actions.click(login_form)
+    actions.perform()
 
 def store_screenshot(filename: str):
-    driver.screenshot(filename=filename)
+    driver.save_screenshot(screenshot_filename)
 
 
 # Define a main() function that calls the other functions in order:
