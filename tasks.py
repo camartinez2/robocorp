@@ -26,9 +26,9 @@ def log_in(user: str, password: str):
     actions.perform()
 
 def store_screenshot(filename: str):
-    time.sleep(3)
+    time.sleep(30)
     driver.save_screenshot(filename)
-    time.sleep(3)
+    time.sleep(30)
 
 # Define a main() function that calls the other functions in order:
 def main():
