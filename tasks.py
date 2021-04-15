@@ -26,7 +26,8 @@ def log_in(user: str, password: str):
     actions.perform()
     seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
     seller.send_keys('Cristian Adrián Martínez')
-
+    actions.click(seller)
+    actions.perform()
 
 def store_screenshot(filename: str):
     time.sleep(10)
