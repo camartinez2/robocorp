@@ -6,10 +6,8 @@ user = "camtechadmin"
 password = "wzo@1rjtln$o192r"
 screenshot_filename = "output/screenshot.png"
 
-
 def open_the_website(url: str):
     browser.open_available_browser(url)
-
 
 def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder1_Login2_UserName"
@@ -20,10 +18,8 @@ def log_in(user: str, password: str):
     input_field = "id:ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura"
     browser.press_keys(input_field, "ENTER")
 
-
 def store_screenshot(filename: str):
     browser.screenshot(filename=filename)
-
 
 # Define a main() function that calls the other functions in order:
 def main():
