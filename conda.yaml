@@ -13,5 +13,5 @@ dependencies:
       # Define pip packages here.
       # https://pypi.org/
       - rpaframework==9.1.0 # https://rpaframework.org/releasenotes.html
-      - ConfigParser
+      - ConfigParser==5.0.2
       - MySQL-python==1.2.5
