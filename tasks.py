@@ -40,6 +40,7 @@ def create_bill ():
     time.sleep(2)
     form_save = driver.find_element_by_id("invoice_btn")
     form_save.click()
+    time.sleep(2)
 
 def create_bill_client(companyName: str, address: str, notes: str):
     time.sleep(2)
