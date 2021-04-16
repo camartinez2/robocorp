@@ -10,34 +10,10 @@ con = pymysql.connect(host='proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaw
         db='nt_billed',
         port=3306)
 
-try:
-    with con.cursor() as cur:
-
-        cur.execute('SELECT VERSION()')
-
-        version = cur.fetchone()
-
-        print(f'Database version: {version[0]}')
-
-finally:
-
-    con.close()
-
-#from RPA.Database import Database
-
 url = "http://192.168.225.63:12121"
 urlbill = "http://192.168.225.63:12121/create_invoice.php"
 user = "registro@baulphp.com"
 password = "12345"
-
-#db = Database()
-#db.connect_to_database("pymysql",
-#                    "nt_billed",
-#                    "admin",
-#                    "Temporal12345",
-#                    "proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com"
-#                    )
-
 
 screenshot_filename = "output/screenshot.png"
 driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver')
@@ -56,29 +32,29 @@ def log_in(user: str, password: str):
     time.sleep(2)
 
 def create_bill ():
-    driver.get(urlbill)
-    time.sleep(2)
-    #select * from billed
-    #where status = 0;
-
-    #orders = db.query("SELECT * FROM nt_billed.billed where status = 0")
-    #for order in orders:
-    #   print(order)
-
-    companyName = "Cecilia Cardenas"
-    address = "Calle 12 # 24 - 12"
-    notes = "Se realiza el cobro a la fecha"
-    productCode_1 = "RD412"
-    productName_1 = "Radiografias"
-    quantity_1 = "3"
-    price_1 = "123000"
-    taxRate = "12"
-    create_bill_client(companyName, address, notes)
-    create_bill_product(productCode_1, productName_1, quantity_1, price_1)
-    create_bill_taxes(taxRate)
-    time.sleep(2)
-    form_save = driver.find_element_by_id("invoice_btn")
-    form_save.click()
+    try:
+        with con.cursor() as cur:
+            cur.execute('SELECT companyName, address, notes, productCode_1, productName_1, quantity_1, price_1, taxRate FROM nt_billed.billed where status = 0')
+            rows = cur.fetchall()
+            for row in rows:
+                driver.get(urlbill)
+                time.sleep(2)
+                companyName = row[0]
+                address = row[1]
+                notes = row[2]
+                productCode_1 = row[3]
+                productName_1 = row[4]
+                quantity_1 = row[5]
+                price_1 = row[6]
+                taxRate = row[7]
+                create_bill_client(companyName, address, notes)
+                create_bill_product(productCode_1, productName_1, quantity_1, price_1)
+                create_bill_taxes(taxRate)
+                time.sleep(2)
+                form_save = driver.find_element_by_id("invoice_btn")
+                form_save.click()
+    finally:
+        con.close()
 
 def create_bill_client(companyName: str, address: str, notes: str):
     form_passwd = driver.find_element_by_id('companyName')
