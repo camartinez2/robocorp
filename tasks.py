@@ -2,11 +2,20 @@ from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+import mysql.connector
 
 url = "http://192.168.225.63:12121"
 urlbill = "http://192.168.225.63:12121/create_invoice.php"
 user = "registro@baulphp.com"
 password = "12345"
+
+mydb = mysql.connector.connect(
+  host="proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com",
+  user="admin",
+  password="Temporal12345",
+  database="nt_billed"
+)
+
 screenshot_filename = "output/screenshot.png"
 driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver')
 
@@ -26,6 +35,14 @@ def log_in(user: str, password: str):
 def create_bill ():
     driver.get(urlbill)
     time.sleep(2)
+    #select * from billed
+    #where status = 0;
+
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM nt_billed.billed where status = 0")
+    myresult = mycursor.fetchall()
+
+
     companyName = "Cecilia Cardenas"
     address = "Calle 12 # 24 - 12"
     notes = "Se realiza el cobro a la fecha"
@@ -42,7 +59,6 @@ def create_bill ():
     form_save.click()
 
 def create_bill_client(companyName: str, address: str, notes: str):
-    time.sleep(2)
     form_passwd = driver.find_element_by_id('companyName')
     form_passwd.send_keys(companyName)
     form_passwd = driver.find_element_by_id('address')
