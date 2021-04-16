@@ -81,7 +81,7 @@ def create_bill_taxes(taxRate: str):
 
 def store_screenshot(filename: str):
     time.sleep(2)
-    driver.save_screenshot(filename)
+    #driver.save_screenshot(filename)
 
 # Define a main() function that calls the other functions in order:
 def main():
