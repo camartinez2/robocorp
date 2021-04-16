@@ -24,6 +24,7 @@ def log_in(user: str, password: str):
     time.sleep(2)
     link_bill = driver.find_element_by_id('create_invoice')
     link_bill.click()
+    #
     #actions = ActionChains(driver)
     #actions.click(link_bill)
     #actions.perform()
