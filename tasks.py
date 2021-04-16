@@ -8,7 +8,7 @@ con = pymysql.connect(host='proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaw
         user='admin',
         password='Temporal12345',
         db='innodb',
-        charset='utf8')
+        port=3306)
 
 try:
     with con.cursor() as cur:
