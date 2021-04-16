@@ -3,9 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-url = "http://ebill.facturaenlinea.co/Login.aspx"
-user = "camtechadmin"
-password = "wzo@1rjtln$o192r"
+url = "http://192.168.225.63:12121"
+user = "registro@baulphp.com"
+password = "12345"
 screenshot_filename = "output/screenshot.png"
 driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver')
 
@@ -13,23 +13,23 @@ def open_the_website(url: str):
     driver.get(url)
 
 def log_in(user: str, password: str):
-    form_name = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_UserName')
+    form_name = driver.find_element_by_id('email')
     form_name.send_keys(user)
-    form_passwd = driver.find_element_by_id('ctl00_ContentPlaceHolder1_Login2_Password')
+    form_passwd = driver.find_element_by_id('password')
     form_passwd.send_keys(password)
-    form_login = driver.find_element_by_id("ctl00_ContentPlaceHolder1_Login2_LoginButton")
+    form_login = driver.find_element_by_id("login")
     form_login.click()
     time.sleep(8)
-    link_bill = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
-    actions = ActionChains(driver)
-    actions.click(link_bill)
-    actions.perform()
-    time.sleep(8)
+    #link_bill = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
+    #actions = ActionChains(driver)
+    #actions.click(link_bill)
+    #actions.perform()
+    #time.sleep(8)
     #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_DDD_L_VI")
-    seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
-    seller.send_keys("Cristian Adri&#225;n Mart&#237;nez")
-    actions.click(seller)
-    actions.perform()
+    #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
+    #seller.send_keys("Cristian Adri&#225;n Mart&#237;nez")
+    #actions.click(seller)
+    #actions.perform()
 
 def store_screenshot(filename: str):
     time.sleep(10)
