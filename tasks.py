@@ -25,7 +25,8 @@ def log_in(user: str, password: str):
     actions.click(link_bill)
     actions.perform()
     time.sleep(8)
-    seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_DDD_L_VI")
+    #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_DDD_L_VI")
+    seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores")
     actions.click(seller)
     actions.perform()
 
