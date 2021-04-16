@@ -24,16 +24,6 @@ def log_in(user: str, password: str):
     time.sleep(2)
     link_bill = driver.find_element_by_id('create_invoice')
     link_bill.click()
-    #
-    #actions = ActionChains(driver)
-    #actions.click(link_bill)
-    #actions.perform()
-    #time.sleep(8)
-    #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_DDD_L_VI")
-    #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
-    #seller.send_keys("Cristian Adri&#225;n Mart&#237;nez")
-    #actions.click(seller)
-    #actions.perform()
 
 def store_screenshot(filename: str):
     time.sleep(10)
