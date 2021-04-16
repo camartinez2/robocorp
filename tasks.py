@@ -6,7 +6,7 @@ import pymysql
 
 con = pymysql.connect(host='proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com',
         user='admin',
-        password='Temporal12345',
+        password='Temporal12345*',
         db='innodb',
         port=3306)
 
