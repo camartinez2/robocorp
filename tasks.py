@@ -27,7 +27,7 @@ def log_in(user: str, password: str):
     time.sleep(8)
     #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_DDD_L_VI")
     seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
-    seller.send_keys('Cristian Adrián Martínez')
+    seller.send_keys("Cristian Adri&#225;n Mart&#237;nez")
     actions.click(seller)
     actions.perform()
 
