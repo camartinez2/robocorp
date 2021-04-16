@@ -40,7 +40,6 @@ def create_bill ():
     time.sleep(2)
     form_save = driver.find_element_by_id("invoice_btn")
     form_save.click()
-    time.sleep(2)
 
 def create_bill_client(companyName: str, address: str, notes: str):
     time.sleep(2)
@@ -66,9 +65,8 @@ def create_bill_taxes(taxRate: str):
     form_passwd.send_keys(taxRate)
 
 def store_screenshot(filename: str):
-    time.sleep(3)
+    time.sleep(2)
     driver.save_screenshot(filename)
-    time.sleep(3)
 
 # Define a main() function that calls the other functions in order:
 def main():
