@@ -66,9 +66,9 @@ def main():
         notes = "Se realiza el cobro a la fecha"
         productCode_1 = "RD412"
         productName_1 = "Radiografias"
-        quantity_1 = 3
-        price_1 = 123000
-        taxRate = 12
+        quantity_1 = "3"
+        price_1 = "123000"
+        taxRate = "12"
         create_bill_client(companyName, address, notes)
         create_bill_product(productCode_1, productName_1, quantity_1, price_1)
         create_bill_taxes(taxRate)
