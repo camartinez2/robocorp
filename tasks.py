@@ -4,6 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 url = "http://192.168.225.63:12121"
+urlbill = "http://192.168.225.63:12121/create_invoice.php"
 user = "registro@baulphp.com"
 password = "12345"
 screenshot_filename = "output/screenshot.png"
@@ -21,10 +22,10 @@ def log_in(user: str, password: str):
     time.sleep(2)
     form_login.click()
     time.sleep(2)
-    #link_bill = driver.find_element_by_id('ctl00_ContentPlaceHolder2_AccordionPane1_content_LinkButFactura')
-    #actions = ActionChains(driver)
-    #actions.click(link_bill)
-    #actions.perform()
+    link_bill = driver.find_element_by_link_text('Crear Factura')
+    actions = ActionChains(driver)
+    actions.click(link_bill)
+    actions.perform()
     #time.sleep(8)
     #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_DDD_L_VI")
     #seller = driver.find_element_by_id("ctl00_ContentPlaceHolder1_DDVendedores_I")
