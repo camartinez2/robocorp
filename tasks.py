@@ -25,6 +25,21 @@ def log_in(user: str, password: str):
 
 def create_bill ():
     driver.get(urlbill)
+    time.sleep(2)
+    companyName = "Cecilia Cardenas"
+    address = "Calle 12 # 24 - 12"
+    notes = "Se realiza el cobro a la fecha"
+    productCode_1 = "RD412"
+    productName_1 = "Radiografias"
+    quantity_1 = "3"
+    price_1 = "123000"
+    taxRate = "12"
+    create_bill_client(companyName, address, notes)
+    create_bill_product(productCode_1, productName_1, quantity_1, price_1)
+    create_bill_taxes(taxRate)
+    time.sleep(2)
+    form_save = driver.find_element_by_name("invoice_btn")
+    form_save.click()
 
 def create_bill_client(companyName: str, address: str, notes: str):
     time.sleep(2)
@@ -60,18 +75,6 @@ def main():
         open_the_website(url)
         log_in(user, password)
         create_bill ()
-        time.sleep(2)
-        companyName = "Cecilia Cardenas"
-        address = "Calle 12 # 24 - 12"
-        notes = "Se realiza el cobro a la fecha"
-        productCode_1 = "RD412"
-        productName_1 = "Radiografias"
-        quantity_1 = "3"
-        price_1 = "123000"
-        taxRate = "12"
-        create_bill_client(companyName, address, notes)
-        create_bill_product(productCode_1, productName_1, quantity_1, price_1)
-        create_bill_taxes(taxRate)
         store_screenshot(screenshot_filename)
     finally:
         driver.close()
