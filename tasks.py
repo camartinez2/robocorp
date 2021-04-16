@@ -7,7 +7,7 @@ import pymysql
 con = pymysql.connect(host='proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com',
         user='admin',
         password='Temporal12345*',
-        db='innodb',
+        db='nt_billed',
         port=3306)
 
 try:
@@ -30,7 +30,7 @@ urlbill = "http://192.168.225.63:12121/create_invoice.php"
 user = "registro@baulphp.com"
 password = "12345"
 
-db = Database()
+#db = Database()
 #db.connect_to_database("pymysql",
 #                    "nt_billed",
 #                    "admin",
