@@ -38,7 +38,7 @@ def create_bill ():
     create_bill_product(productCode_1, productName_1, quantity_1, price_1)
     create_bill_taxes(taxRate)
     time.sleep(2)
-    form_save = driver.find_element_by_name("invoice_btn")
+    form_save = driver.find_element_by_id("invoice_btn")
     form_save.click()
 
 def create_bill_client(companyName: str, address: str, notes: str):
