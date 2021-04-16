@@ -4,10 +4,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 import pymysql
 
-con = pymysql.connect(host='proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com',
-        user='admin',
-        password='Temporal12345',
-        db='nt_billed',
+con = pymysql.connect(host='192.168.225.63:11001',
+        user='root',
+        password='#*2019*&$jsYsR0925',
+        db='camtech_shrdbuser',
         charset='utf8')
 
 try:
