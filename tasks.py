@@ -4,11 +4,9 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 import pymysql
 
-con = pymysql.connect("proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com", "admin",
-    "Temporal12345", "nt_billed")
+con = pymysql.connect("proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com", "admin", "Temporal12345", "nt_billed")
 
 try:
-
     with con.cursor() as cur:
 
         cur.execute('SELECT VERSION()')
