@@ -22,8 +22,7 @@ def log_in(user: str, password: str):
     time.sleep(2)
     form_login.click()
     time.sleep(2)
-    link_bill = driver.find_element_by_id('create_invoice')
-    link_bill.click()
+    driver.get(urlbill)
 
 def store_screenshot(filename: str):
     time.sleep(10)
