@@ -2,7 +2,26 @@ from RPA.Browser.Selenium import Selenium
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
-from RPA.Database import Database
+import pymysql
+
+con = pymysql.connect("proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com", "admin",
+    "Temporal12345", "nt_billed")
+
+try:
+
+    with con.cursor() as cur:
+
+        cur.execute('SELECT VERSION()')
+
+        version = cur.fetchone()
+
+        print(f'Database version: {version[0]}')
+
+finally:
+
+    con.close()
+
+#from RPA.Database import Database
 
 url = "http://192.168.225.63:12121"
 urlbill = "http://192.168.225.63:12121/create_invoice.php"
@@ -17,12 +36,6 @@ db = Database()
 #                    "proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com"
 #                    )
 
-db.connect_to_database("pymysql",
-                    "nt_billed",
-                    "admin",
-                    "Temporal12345",
-                    "proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com"
-                    )
 
 screenshot_filename = "output/screenshot.png"
 driver = webdriver.Chrome('/Users/camtech/Desktop/chromedriver')
@@ -46,9 +59,9 @@ def create_bill ():
     #select * from billed
     #where status = 0;
 
-    orders = db.query("SELECT * FROM nt_billed.billed where status = 0")
-    for order in orders:
-       print(order)
+    #orders = db.query("SELECT * FROM nt_billed.billed where status = 0")
+    #for order in orders:
+    #   print(order)
 
     companyName = "Cecilia Cardenas"
     address = "Calle 12 # 24 - 12"
