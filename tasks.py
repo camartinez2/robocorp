@@ -22,22 +22,59 @@ def log_in(user: str, password: str):
     time.sleep(2)
     form_login.click()
     time.sleep(2)
+
+def create_bill ():
     driver.get(urlbill)
 
+def create_bill_client(companyName: str, address: str, notes: str):
+    time.sleep(2)
+    form_passwd = driver.find_element_by_id('companyName')
+    form_passwd.send_keys(companyName)
+    form_passwd = driver.find_element_by_id('address')
+    form_passwd.send_keys(address)
+    form_passwd = driver.find_element_by_id('notes')
+    form_passwd.send_keys(notes)
+
+def create_bill_product(productCode_1: str, productName_1: str, quantity_1: str, price_1: str)
+    form_passwd = driver.find_element_by_id('productCode_1')
+    form_passwd.send_keys(productCode_1)
+    form_passwd = driver.find_element_by_id('productName_1')
+    form_passwd.send_keys(productName_1)
+    form_passwd = driver.find_element_by_id('quantity_1')
+    form_passwd.send_keys(quantity_1)
+    form_passwd = driver.find_element_by_id('price_1')
+    form_passwd.send_keys(price_1)
+
+def create_bill_taxes(taxRate: str)
+    form_passwd = driver.find_element_by_id('taxRate')
+    form_passwd.send_keys(taxRate)
+
 def store_screenshot(filename: str):
-    time.sleep(10)
+    time.sleep(3)
     driver.save_screenshot(filename)
-    time.sleep(10)
+    time.sleep(3)
 
 # Define a main() function that calls the other functions in order:
 def main():
     try:
         open_the_website(url)
         log_in(user, password)
-        #store_screenshot(screenshot_filename)
-    finally:
+        create_bill ()
+        time.sleep(2)
+        companyName = "Cecilia Cardenas"
+        address = "Calle 12 # 24 - 12"
+        notes = "Se realiza el cobro a la fecha"
+        productCode_1 = "RD412"
+        productName_1 = "Radiografias"
+        quantity_1 = 3
+        price_1 = 123000
+        taxRate = 12
+        create_bill_client(companyName, address, notes)
+        create_bill_product(productCode_1, productName_1, quantity_1, price_1)
+        create_bill_taxes(taxRate)
         store_screenshot(screenshot_filename)
-        #driver.close()
+    finally:
+        driver.close()
 
 # Call the main() function, checking that we are running as a stand-alone script:
 if __name__ == "__main__":
