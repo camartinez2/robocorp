@@ -35,7 +35,7 @@ def create_bill_client(companyName: str, address: str, notes: str):
     form_passwd = driver.find_element_by_id('notes')
     form_passwd.send_keys(notes)
 
-def create_bill_product(productCode_1: str, productName_1: str, quantity_1: str, price_1: str)
+def create_bill_product(productCode_1: str, productName_1: str, quantity_1: str, price_1: str):
     form_passwd = driver.find_element_by_id('productCode_1')
     form_passwd.send_keys(productCode_1)
     form_passwd = driver.find_element_by_id('productName_1')
@@ -45,7 +45,7 @@ def create_bill_product(productCode_1: str, productName_1: str, quantity_1: str,
     form_passwd = driver.find_element_by_id('price_1')
     form_passwd.send_keys(price_1)
 
-def create_bill_taxes(taxRate: str)
+def create_bill_taxes(taxRate: str):
     form_passwd = driver.find_element_by_id('taxRate')
     form_passwd.send_keys(taxRate)
 
