@@ -10,11 +10,18 @@ user = "registro@baulphp.com"
 password = "12345"
 
 db = Database()
-db.connect_to_database('pymysql',
+#db.connect_to_database("pymysql",
+#                    "nt_billed",
+#                    "admin",
+#                    "Temporal12345",
+#                    "proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com"
+#                    )
+
+db.connect_to_database("pymysql",
                     "nt_billed",
                     "admin",
                     "Temporal12345",
-                    'proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com'
+                    "proyectouniandes.cxzzrkp6kclp.us-east-2.rds.amazonaws.com"
                     )
 
 screenshot_filename = "output/screenshot.png"
