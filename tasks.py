@@ -1,4 +1,5 @@
 import time
+import json
 
 import requests
 from selenium import webdriver
@@ -29,7 +30,7 @@ def log_in(user: str, password: str):
 
 def create_bill():
     res = requests.get('http://18.223.235.79:7001/api/facturacion/rpa')
-    data = res.json()
+    data = json.loads(res.json())
     for row in data:
         driver.get(urlbill)
         time.sleep(2)
